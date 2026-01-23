@@ -98,6 +98,19 @@ in
 
   };
 
+
+  systemd.user.services.swaybg = {
+    enable = true;
+    after = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    requisite = [ "graphical-session.target" ];
+    description = "My Cool User Service";
+    serviceConfig = {
+      ExecStart = "/etc/profiles/per-user/william/bin/swaybg -m fill -i \"%h/Pictures/ScreenSaver/interlude_16.png\"";
+      Restart = "on-failure";
+    };
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 

@@ -24,9 +24,8 @@
     nil
     swaybg
     xwayland-satellite
-    fcitx
-    fcitx-rime
-    libcava
+    fcitx5
+    fcitx5-rime
     cava
   ];
 
@@ -65,10 +64,18 @@
   services.swayidle.enable = true; # idle management daemon
   services.polkit-gnome.enable = true; # polkit
 
-  systemd.user.services.swaybg.enable = true;
-
   # Gnome Terminal
-  programs.gnome-terminal.enable = true;
+  programs.gnome-terminal = {
+    enable = true;
+    profile = {
+      "b5d2f695-5555-4841-9107-3de3acedf9d5" = {
+        default = true;
+        visibleName = "Terminal";
+        font = "JetBrainsMono Nerd Font 12";
+        customCommand = "zsh";
+      };
+    };
+  };
 
   home.stateVersion = "25.11";
 
