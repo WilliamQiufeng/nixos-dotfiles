@@ -6,7 +6,7 @@
 }:
 
 {
-  
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "william";
@@ -24,6 +24,10 @@
     nil
     swaybg
     xwayland-satellite
+    fcitx
+    fcitx-rime
+    libcava
+    cava
   ];
 
   # ----- GIT -----
@@ -60,6 +64,11 @@
   services.mako.enable = true; # notification daemon
   services.swayidle.enable = true; # idle management daemon
   services.polkit-gnome.enable = true; # polkit
+
+  systemd.user.services.swaybg.enable = true;
+
+  # Gnome Terminal
+  programs.gnome-terminal.enable = true;
 
   home.stateVersion = "25.11";
 
