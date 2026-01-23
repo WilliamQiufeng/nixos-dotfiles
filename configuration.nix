@@ -44,6 +44,8 @@ in
     LC_TIME = "en_GB.UTF-8";
   };
 
+  programs.niri.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -92,8 +94,6 @@ in
   programs.firefox.enable = true;
 
   programs.zsh.enable = true;
-
-  programs.niri.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
