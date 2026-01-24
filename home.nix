@@ -45,6 +45,7 @@ in
     swaynotificationcenter
     mpv
     btop
+    neofetch
   ];
 
   # ----- GIT -----
