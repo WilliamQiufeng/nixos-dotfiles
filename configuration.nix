@@ -104,9 +104,9 @@ in
     after = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
     requisite = [ "graphical-session.target" ];
-    description = "My Cool User Service";
+    description = "Sway BG";
     serviceConfig = {
-      ExecStart = "/etc/profiles/per-user/william/bin/swaybg -m fill -i \"%h/Pictures/ScreenSaver/interlude_16.png\"";
+      ExecStart = "/etc/profiles/per-user/william/bin/swaybg -m fill -i \"/home/william/Pictures/ScreenSaver/interlude_16.png\"";
       Restart = "on-failure";
     };
   };
