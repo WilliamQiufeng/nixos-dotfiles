@@ -62,12 +62,9 @@
         name = "WilliamQiufeng";
         email = "williamqiufeng@outlook.com";
       };
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
+      credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
     };
   };
-  programs.direnv.enable = true;
   programs.pay-respects = {
     enable = true;
   };
@@ -117,6 +114,12 @@
   dconf = {
     enable = true;
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
+
+  # direnv
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   home.stateVersion = "25.11";
