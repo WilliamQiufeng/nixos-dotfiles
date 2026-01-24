@@ -139,8 +139,18 @@ in
       icu # Important for dotnet
       openssl # Important for dotnet
       xorg.libX11
+      xorg.libXi
+      xorg.libXext
+      xorg.libXrandr
+      xorg.libXcursor
       glib
+
       steam
+      SDL2
+      libGL
+      libglvnd
+      alsa-lib
+      libpulseaudio
     ];
   };
 
