@@ -286,7 +286,7 @@
                 ""
             ]
         },
-        "on-click": "pavucontrol-qt",
+        "on-click": "pavucontrol",
         "on-click-right": "qpwgraph"
     },
     "cava": {

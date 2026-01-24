@@ -27,6 +27,9 @@
     fcitx5
     fcitx5-rime
     cava
+    playerctl
+    pavucontrol
+    qpwgraph
   ];
 
   # ----- GIT -----
