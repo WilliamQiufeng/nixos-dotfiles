@@ -29,6 +29,7 @@
     pavucontrol
     qpwgraph
     swaynotificationcenter
+    mpv
   ];
 
   # ----- GIT -----
