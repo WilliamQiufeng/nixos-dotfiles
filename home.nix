@@ -51,6 +51,11 @@
   programs.waybar.enable = true; # launch on startup in the default setting (bar)
   xdg.configFile."niri/config.kdl".source = config/niri.kdl;
 
+  # ----- Waybar -----
+  xdg.configFile."waybar" = {
+    source = config.lib.file.mkOutOfStoreSymlink "/home/william/nixos-dotfiles/config/waybar";
+  };
+
   # ----- VSCode -----
   programs.vscode = {
     enable = true;
