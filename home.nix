@@ -44,6 +44,7 @@ in
     qpwgraph
     swaynotificationcenter
     mpv
+    btop
   ];
 
   # ----- GIT -----
