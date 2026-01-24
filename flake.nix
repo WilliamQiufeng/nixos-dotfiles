@@ -30,6 +30,22 @@
                 nix4vscode.overlays.default
               ];
             }
+            (
+              { pkgs, ... }:
+              {
+                nixpkgs.overlays = [
+                  (final: prev: {
+                    gnome-control-center = prev.gnome-control-center.overrideAttrs (old: {
+                      # Wrap the binary to always see GNOME as the desktop
+                      postFixup = (old.postFixup or "") + ''
+                        wrapProgram $out/bin/gnome-control-center \
+                          --set XDG_CURRENT_DESKTOP GNOME
+                      '';
+                    });
+                  })
+                ];
+              }
+            )
             home-manager.nixosModules.home-manager
             {
               home-manager = {
