@@ -32,6 +32,16 @@
     mpv
     btop
     neofetch
+
+    # .NET Development
+    jetbrains.rider
+    dotnet-sdk_10
+
+    # Scala
+    sbt-with-scala-native
+
+    # IDEA
+    jetbrains.idea
   ];
 
   # ----- GIT -----
