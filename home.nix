@@ -5,6 +5,20 @@
   ...
 }:
 
+let
+  mkSoundScript =
+    name: audioFile:
+    pkgs.writeShellScript name ''
+      PATH=$PATH:${pkgs.swaynotificationcenter}/bin:${pkgs.mpv}/bin
+      # Check Do Not Disturb state
+      state=$(swaync-client -D)
+      if [[ "$state" == "true" ]]; then
+          exit 0
+      fi
+      # Play the audio file passed from Nix
+      mpv --no-terminal ${audioFile}
+    '';
+in
 {
 
   # Home Manager needs a bit of information about you and the
@@ -89,23 +103,23 @@
 
       scripts = {
         message-sound = {
-          exec = "${config/swaync/sound/sound-message.sh}";
+          exec = "${mkSoundScript "message" config/swaync/sound/message.ogg}";
           app-name = "QQ|Google-chrome";
         };
         complete-sound = {
-          exec = "${config/swaync/sound/sound-complete.sh}";
+          exec = "${mkSoundScript "complete" config/swaync/sound/complete.ogg}";
           app-name = "alixby3|com.xunlei.download|baidunetdisk";
         };
         Low-sound = {
-          exec = "${config/swaync/sound/sound-normal.sh}";
+          exec = "${mkSoundScript "normal" config/swaync/sound/normal.oga}";
           urgency = "Low";
         };
         Normal-sound = {
-          exec = "${config/swaync/sound/sound-normal.sh}";
+          exec = "${mkSoundScript "normal" config/swaync/sound/normal.oga}";
           urgency = "Normal";
         };
         Critical-sound = {
-          exec = "${config/swaync/sound/sound-critical.sh}";
+          exec = "${mkSoundScript "critical" config/swaync/sound/critical.oga}";
           urgency = "Critical";
         };
       };
