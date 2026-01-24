@@ -71,7 +71,7 @@
       "b5d2f695-5555-4841-9107-3de3acedf9d5" = {
         default = true;
         visibleName = "Terminal";
-        font = "JetBrainsMono Nerd Font 12";
+        font = "Fira Code Nerd Font 12";
         customCommand = "zsh";
       };
     };
