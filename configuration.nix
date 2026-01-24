@@ -98,7 +98,6 @@ in
 
   };
 
-
   systemd.user.services.swaybg = {
     enable = true;
     after = [ "graphical-session.target" ];
@@ -106,9 +105,10 @@ in
     requisite = [ "graphical-session.target" ];
     description = "Sway BG";
     serviceConfig = {
-      ExecStart = "/etc/profiles/per-user/william/bin/swaybg -m fill -i \"/home/william/Pictures/ScreenSaver/interlude_16.png\"";
+      ExecStart = "${pkgs.swaybg}/bin/swaybg -m fill -i ${config/swaybg/interlude_16.png}";
       Restart = "on-failure";
     };
+    wantedBy = [ "graphical-session.target" ];
   };
 
   # Install firefox.

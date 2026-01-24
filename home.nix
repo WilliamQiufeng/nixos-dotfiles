@@ -56,7 +56,7 @@
 
   # ----- Waybar -----
   xdg.configFile."waybar" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/william/nixos-dotfiles/config/waybar";
+    source = config.lib.file.mkOutOfStoreSymlink config/waybar;
   };
 
   # ----- VSCode -----
