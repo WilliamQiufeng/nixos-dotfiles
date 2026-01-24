@@ -17,11 +17,19 @@
   };
 
   home.packages = with pkgs; [
+    # Git Credential Manager
+    git-credential-manager
+
+    # Apps
     microsoft-edge
     discord-ptb
     spotify
     vscode
+
+    # Nix LSP
     nil
+
+    # Desktop
     swaybg
     xwayland-satellite
     cava
@@ -30,6 +38,8 @@
     qpwgraph
     swaynotificationcenter
     mpv
+
+    # Tools
     btop
     neofetch
 
@@ -52,6 +62,9 @@
         name = "WilliamQiufeng";
         email = "williamqiufeng@outlook.com";
       };
+      credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
     };
   };
   programs.direnv.enable = true;
