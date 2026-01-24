@@ -180,6 +180,12 @@ in
     };
   };
 
+  # GNOME Dark Theme
+  dconf = {
+    enable = true;
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
+
   home.stateVersion = "25.11";
 
   # Let Home Manager install and manage itself.
