@@ -124,17 +124,26 @@ in
 
   programs.zsh.enable = true;
 
+  # Use Vim as default editor
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-  ];
+  environment = {
+    # List packages installed in system profile. To search, run:
+    # $ nix search wget
+    systemPackages = with pkgs; [
+      wget
+    ];
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    # For Electron Apps to use IMEs on Wayland
+    sessionVariables.NIXOS_OZONE_WL = "1";
+  };
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
