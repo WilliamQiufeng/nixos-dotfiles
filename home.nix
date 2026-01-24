@@ -58,6 +58,11 @@
     source = config.lib.file.mkOutOfStoreSymlink config/waybar;
   };
 
+  # ----- SwayNC -----
+  xdg.configFile."swaync" = {
+    source = config.lib.file.mkOutOfStoreSymlink config/swaync;
+  };
+
   # ----- VSCode -----
   programs.vscode = {
     enable = true;
