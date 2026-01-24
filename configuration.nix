@@ -130,6 +130,20 @@ in
     defaultEditor = true;
   };
 
+  programs.nix-ld = {
+    enable = true;
+    # Sets up libraries that unpatched binaries commonly need
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+      icu # Important for dotnet
+      openssl # Important for dotnet
+      xorg.libX11
+      glib
+      steam
+    ];
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
