@@ -6,6 +6,9 @@
 }:
 
 {
+  imports = [
+    ./config/obs/config.nix
+  ];
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -38,6 +41,7 @@
     qpwgraph
     swaynotificationcenter
     mpv
+    unzip
 
     # Tools
     btop
@@ -75,17 +79,6 @@
   programs.swaylock.enable = true; # Super+Alt+L in the default setting (screen locker)
   programs.waybar.enable = true; # launch on startup in the default setting (bar)
   xdg.configFile."niri/config.kdl".source = config/niri.kdl;
-
-  # ----- OBS -----
-  programs.obs-studio = {
-    enable = true;
-    plugins = with pkgs.obs-studio-plugins; [
-      wlrobs
-      obs-backgroundremoval
-      obs-pipewire-audio-capture
-      input-overlay
-    ];
-  };
 
   # ----- Waybar -----
   xdg.configFile."waybar" = {
