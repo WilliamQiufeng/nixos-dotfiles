@@ -55,6 +55,7 @@ in
     btop
     neofetch
     lshw
+    nvtopPackages.full
 
     # .NET Development
     jetbrains.rider
