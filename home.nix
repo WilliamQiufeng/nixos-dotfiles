@@ -76,6 +76,17 @@
   programs.waybar.enable = true; # launch on startup in the default setting (bar)
   xdg.configFile."niri/config.kdl".source = config/niri.kdl;
 
+  # ----- OBS -----
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
+      input-overlay
+    ];
+  };
+
   # ----- Waybar -----
   xdg.configFile."waybar" = {
     source = config.lib.file.mkOutOfStoreSymlink config/waybar;
