@@ -46,6 +46,7 @@
     # Tools
     btop
     neofetch
+    lshw
 
     # .NET Development
     jetbrains.rider
