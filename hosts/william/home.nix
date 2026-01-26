@@ -45,6 +45,7 @@
     neofetch
     lshw
     nix-search-cli
+    findutils
 
     # .NET Development
     jetbrains.rider
