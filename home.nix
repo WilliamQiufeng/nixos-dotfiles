@@ -5,18 +5,10 @@
   pkgs-2505,
   ...
 }:
-let
-  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
-    export __NV_PRIME_RENDER_OFFLOAD=1
-    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export __VK_LAYER_NV_optimus=NVIDIA_only
-    exec "$@"
-  '';
-in
 {
   imports = [
     ./config/obs/config.nix
+    ./config/nvidia
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -56,7 +48,6 @@ in
     btop
     neofetch
     lshw
-    nvtopPackages.full
     nix-search-cli
 
     # .NET Development
@@ -68,9 +59,6 @@ in
 
     # IDEA
     jetbrains.idea
-
-    # NVIDIA
-    nvidia-offload
   ];
 
   # ----- GIT -----
