@@ -12,6 +12,7 @@
     ./packages/ime.nix
     ./packages/shell/zsh.nix
     ./packages/gnome/home.nix
+    ./packages/steam/home.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -103,27 +104,6 @@
       "pinage404.nix-extension-pack"
       "ms-python.python"
     ];
-  };
-
-  xdg.desktopEntries = {
-    steam = {
-      name = "Steam";
-      exec = "steam %U";
-      icon = "steam";
-      terminal = false;
-      categories = [
-        "Network"
-        "FileTransfer"
-        "Game"
-      ];
-      mimeType = [
-        "x-scheme-handler/steam"
-        "x-scheme-handler/steamlink"
-      ];
-      settings = {
-        PrefersNonDefaultGPU = "false";
-      };
-    };
   };
 
   services.swayidle.enable = true; # idle management daemon
