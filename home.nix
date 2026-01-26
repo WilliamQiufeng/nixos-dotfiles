@@ -56,6 +56,7 @@ in
     neofetch
     lshw
     nvtopPackages.full
+    nix-search-cli
 
     # .NET Development
     jetbrains.rider
