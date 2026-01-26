@@ -2,6 +2,7 @@
   config,
   pkgs,
   nix4vscode,
+  pkgs-2505,
   ...
 }:
 let
@@ -32,7 +33,7 @@ in
     git-credential-manager
 
     # Apps
-    microsoft-edge
+    pkgs-2505.microsoft-edge # From 25.05 because Sync on work accounts break on 25.11
     discord-ptb
     spotify
     vscode
