@@ -14,6 +14,7 @@
     ../../packages/gnome/home.nix
     ../../packages/steam/home.nix
     ../../desktop/niri
+    ../../packages/lunar-client/home.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -34,7 +35,6 @@
     discord-ptb
     spotify
     vscode
-    lunar-client
 
     # Nix LSP
     nil
