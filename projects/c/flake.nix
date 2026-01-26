@@ -21,6 +21,7 @@
         ms-vscode.cpptools
         ms-vscode.cmake-tools
         twxs.cmake
+        ms-vscode.makefile-tools
       ];
       vscode-with-extensions = pkgs.vscode-with-extensions.override {
         vscodeExtensions = vscode-extensions;
