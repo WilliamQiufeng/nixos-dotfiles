@@ -19,7 +19,6 @@
       # We prefer Clangd for intellisense but keep C/C++ tools for debugging
       vscode-extensions = with pkgs.vscode-extensions; [
         ms-vscode.cpptools
-        llvm-vs-code-extensions.vscode-clangd
         ms-vscode.cmake-tools
         twxs.cmake
       ];
