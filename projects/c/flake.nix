@@ -22,6 +22,7 @@
         ms-vscode.cmake-tools
         twxs.cmake
         ms-vscode.makefile-tools
+        ms-vscode.hexeditor
       ];
       vscode-with-extensions = pkgs.vscode-with-extensions.override {
         vscodeExtensions = vscode-extensions;
