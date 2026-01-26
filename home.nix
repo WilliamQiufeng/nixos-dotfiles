@@ -95,7 +95,8 @@ in
 
   # ----- Waybar -----
   xdg.configFile."waybar" = {
-    source = config.lib.file.mkOutOfStoreSymlink config/waybar;
+    source = config/waybar;
+    recursive = true;
   };
 
   # ----- SwayNC -----
