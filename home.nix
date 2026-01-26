@@ -10,6 +10,7 @@
     ./config/obs/config.nix
     ./config/nvidia
     ./packages/ime.nix
+    ./packages/shell/zsh.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -156,13 +157,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.zsh.enable = true;
-  programs.zsh.oh-my-zsh = {
-    enable = true;
-    plugins = [
-      "git"
-    ];
-    theme = "robbyrussell";
-  };
 }
