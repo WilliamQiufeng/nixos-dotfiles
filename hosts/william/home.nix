@@ -34,6 +34,7 @@
     discord-ptb
     spotify
     vscode
+    lunar-client
 
     # Nix LSP
     nil
