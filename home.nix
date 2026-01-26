@@ -11,6 +11,7 @@
     ./config/nvidia
     ./packages/ime.nix
     ./packages/shell/zsh.nix
+    ./packages/gnome/home.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -127,25 +128,6 @@
 
   services.swayidle.enable = true; # idle management daemon
   services.polkit-gnome.enable = true; # polkit
-
-  # Gnome Terminal
-  programs.gnome-terminal = {
-    enable = true;
-    profile = {
-      "b5d2f695-5555-4841-9107-3de3acedf9d5" = {
-        default = true;
-        visibleName = "Terminal";
-        font = "Fira Code Nerd Font 12";
-        customCommand = "zsh";
-      };
-    };
-  };
-
-  # GNOME Dark Theme
-  dconf = {
-    enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-  };
 
   # direnv
   programs.direnv = {
