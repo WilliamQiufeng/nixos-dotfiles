@@ -7,13 +7,13 @@
 }:
 {
   imports = [
-    ./config/obs/config.nix
-    ./config/nvidia
-    ./packages/ime.nix
-    ./packages/shell/zsh.nix
-    ./packages/gnome/home.nix
-    ./packages/steam/home.nix
-    ./desktop/niri
+    ../../config/obs/config.nix
+    ../../config/nvidia/home.nix
+    ../../packages/ime.nix
+    ../../packages/shell/zsh.nix
+    ../../packages/gnome/home.nix
+    ../../packages/steam/home.nix
+    ../../desktop/niri
   ];
 
   # Home Manager needs a bit of information about you and the

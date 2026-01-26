@@ -38,7 +38,7 @@
         william = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-            ./configuration.nix
+            ./hosts/william/configuration.nix
             {
               nixpkgs.overlays = [
                 nix4vscode.overlays.default
@@ -65,7 +65,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.william = import ./home.nix;
+                users.william = import ./hosts/william/home.nix;
                 backupFileExtension = "backup";
                 extraSpecialArgs = {
                   inherit nix4vscode;
