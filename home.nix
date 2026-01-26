@@ -9,6 +9,7 @@
   imports = [
     ./config/obs/config.nix
     ./config/nvidia
+    ./packages/ime.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -164,15 +165,4 @@
     ];
     theme = "robbyrussell";
   };
-
-  i18n.inputMethod = {
-    type = "fcitx5";
-    enable = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-gtk # alternatively, kdePackages.fcitx5-qt
-      qt6Packages.fcitx5-chinese-addons # table input method support
-      fcitx5-nord # a color theme
-    ];
-  };
-
 }
