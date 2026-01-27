@@ -35,6 +35,7 @@
     discord-ptb
     spotify
     vscode
+    qq
 
     # Nix LSP
     nil
