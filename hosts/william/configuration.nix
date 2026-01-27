@@ -11,6 +11,7 @@
     ../../packages/steam/configuration.nix
     ./graphics.nix
     ./hardware-configuration.nix
+    ./bluetooth.nix
   ];
 
   # Bootloader.
