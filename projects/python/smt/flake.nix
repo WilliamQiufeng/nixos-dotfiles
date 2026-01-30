@@ -20,6 +20,8 @@
         (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
             z3-solver
         ]))
+        pkgs.pandoc
+        pkgs.texliveSmall
      ];
 
       # This tells nix-ld where to find the libraries ONLY for this project
