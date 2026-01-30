@@ -36,6 +36,7 @@
     spotify
     vscode
     qq
+    wechat
 
     # Nix LSP
     nil
