@@ -115,10 +115,15 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     shell = pkgs.zsh;
 
   };
+
+  # Docker
+  virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
 
   systemd.user.services.swaybg = {
     enable = true;
