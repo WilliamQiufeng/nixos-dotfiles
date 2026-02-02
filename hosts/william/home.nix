@@ -48,6 +48,7 @@
     lshw
     nix-search-cli
     findutils
+    javaPackages.compiler.openjdk21
 
     # .NET Development
     jetbrains.rider
