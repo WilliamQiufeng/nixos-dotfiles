@@ -81,6 +81,7 @@
     profiles.default.extensions = pkgs.nix4vscode.forVscode [
       "pinage404.nix-extension-pack"
       "ms-python.python"
+      "ms-python.debugpy"
     ];
   };
 
