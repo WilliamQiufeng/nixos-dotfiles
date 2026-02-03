@@ -37,6 +37,7 @@
     vscode
     qq
     wechat
+    zotero
 
     # Nix LSP
     nil
