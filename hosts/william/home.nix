@@ -39,6 +39,7 @@
     wechat
     zotero
     localsend
+    prismlauncher
 
     # Nix LSP
     nil
