@@ -38,6 +38,7 @@
     qq
     wechat
     zotero
+    localsend
 
     # Nix LSP
     nil
