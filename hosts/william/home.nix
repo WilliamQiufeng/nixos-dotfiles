@@ -45,6 +45,7 @@
     nil
 
     # Tools
+    gnumake
     unzip
     btop
     neofetch
