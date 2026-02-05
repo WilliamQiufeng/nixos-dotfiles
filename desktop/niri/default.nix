@@ -17,16 +17,6 @@
   programs.waybar.enable = true; # launch on startup in the default setting (bar)
   xdg.configFile."niri/config.kdl".source = ../../config/niri.kdl;
 
-  # ----- Waybar -----
-  xdg.configFile."waybar" = {
-    source = ../../config/waybar;
-    recursive = true;
-  };
-
-  # ----- SwayNC -----
-  services.swaync = import ../../config/swaync/config.nix { inherit pkgs; };
-  xdg.configFile."swaync/style.css".source = ../../config/swaync/style.css;
-
   services.swayidle.enable = true; # idle management daemon
   services.polkit-gnome.enable = true; # polkit
 }

@@ -54,6 +54,8 @@
     nix-search-cli
     findutils
     javaPackages.compiler.openjdk21
+    cliphist
+    wl-clipboard
 
     # .NET Development
     jetbrains.rider
