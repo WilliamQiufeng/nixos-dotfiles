@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs_2505.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs_unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -22,6 +23,7 @@
     inputs@{
       nixpkgs,
       nixpkgs_2505,
+      nixpkgs_unstable,
       home-manager,
       nix4vscode,
       ...
@@ -29,6 +31,10 @@
     let
       system = "x86_64-linux";
       pkgs-2505 = import nixpkgs_2505 {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      pkgs-unstable = import nixpkgs_unstable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -42,6 +48,7 @@
           inherit nixpkgs;
           inherit nix4vscode;
           inherit pkgs-2505;
+          inherit pkgs-unstable;
         };
       };
     };
