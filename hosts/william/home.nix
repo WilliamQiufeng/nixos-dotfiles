@@ -16,6 +16,7 @@
     ../../desktop/niri
     ../../desktop/noctalia
     ../../packages/lunar-client/home.nix
+    ../../config/cliphist
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -54,8 +55,6 @@
     nix-search-cli
     findutils
     javaPackages.compiler.openjdk21
-    cliphist
-    wl-clipboard
 
     # .NET Development
     jetbrains.rider
