@@ -17,6 +17,11 @@
       url = "github:Lxtharia/minegrub-world-sel-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs_unstable";
+    };
   };
 
   outputs =
@@ -26,6 +31,7 @@
       nixpkgs_unstable,
       home-manager,
       nix4vscode,
+      noctalia,
       ...
     }:
     let
@@ -49,6 +55,7 @@
           inherit nix4vscode;
           inherit pkgs-2505;
           inherit pkgs-unstable;
+          inherit noctalia;
         };
       };
     };

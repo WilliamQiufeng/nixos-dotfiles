@@ -14,6 +14,7 @@
     ../../packages/gnome/home.nix
     ../../packages/steam/home.nix
     ../../desktop/niri
+    ../../desktop/noctalia
     ../../packages/lunar-client/home.nix
   ];
 

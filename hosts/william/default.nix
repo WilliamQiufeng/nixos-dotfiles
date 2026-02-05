@@ -5,6 +5,7 @@
   nixpkgs,
   nix4vscode,
   pkgs-2505,
+  noctalia,
   ...
 }:
 nixpkgs.lib.nixosSystem {
@@ -42,6 +43,7 @@ nixpkgs.lib.nixosSystem {
         extraSpecialArgs = {
           inherit nix4vscode;
           inherit pkgs-2505;
+          inherit noctalia;
         };
       };
     }

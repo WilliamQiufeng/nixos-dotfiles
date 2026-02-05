@@ -69,6 +69,9 @@
 
   programs.niri.enable = true;
 
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
