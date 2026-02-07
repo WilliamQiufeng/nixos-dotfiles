@@ -55,14 +55,18 @@
     javaPackages.compiler.openjdk21
 
     # .NET Development
-    jetbrains.rider
+    (jetbrains.rider.override {
+      vmopts = "-Dawt.toolkit.name=WLToolkit";
+    })
     dotnet-sdk_10
 
     # Scala
     sbt-with-scala-native
 
     # IDEA
-    jetbrains.idea
+    (jetbrains.idea.override {
+      vmopts = "-Dawt.toolkit.name=WLToolkit";
+    })
   ];
 
   # ----- GIT -----
