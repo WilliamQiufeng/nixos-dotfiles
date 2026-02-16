@@ -40,6 +40,7 @@
     zotero
     localsend
     prismlauncher
+    wireshark
 
     # Nix LSP
     nil
