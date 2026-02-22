@@ -41,6 +41,7 @@
     localsend
     prismlauncher
     wireshark
+    clash-verge-rev
 
     # Nix LSP
     nil
