@@ -54,6 +54,7 @@
     lshw
     nix-search-cli
     findutils
+    brightnessctl
     javaPackages.compiler.openjdk21
 
     # .NET Development
