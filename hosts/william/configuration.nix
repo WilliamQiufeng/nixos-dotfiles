@@ -108,6 +108,18 @@
     enable = true;
     package = pkgs.mariadb;
   };
+  services.elasticsearch = {
+    enable = true;
+    package = pkgs.elasticsearch;
+    listenAddress = "127.0.0.1";
+    port = 9200;
+    
+    # Crucial for local development
+    extraConf = ''
+      xpack.security.enabled: false
+      xpack.security.http.ssl.enabled: false
+    '';
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
