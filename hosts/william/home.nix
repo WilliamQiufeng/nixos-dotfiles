@@ -70,6 +70,11 @@
     (jetbrains.idea.override {
       vmopts = "-Dawt.toolkit.name=WLToolkit";
     })
+
+    # GoLand
+    (jetbrains.goland.override {
+      vmopts = "-Dawt.toolkit.name=WLToolkit";
+    })
   ];
 
   # ----- GIT -----
