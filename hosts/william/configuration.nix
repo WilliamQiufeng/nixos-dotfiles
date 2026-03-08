@@ -181,6 +181,8 @@
     # $ nix search wget
     systemPackages = with pkgs; [
       wget
+      docker-compose
+      docker-buildx
     ];
 
     # For Electron Apps to use IMEs on Wayland
