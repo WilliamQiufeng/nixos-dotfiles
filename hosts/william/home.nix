@@ -24,6 +24,7 @@
 
   home.shellAliases = {
     nrs = "sudo nixos-rebuild switch --flake '/home/william/nixos-dotfiles#william'";
+    enable_proxy = "export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897";
   };
 
   home.packages = with pkgs; [
