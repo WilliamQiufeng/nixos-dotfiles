@@ -120,6 +120,10 @@
       xpack.security.http.ssl.enabled: false
     '';
   };
+  services.redis = {
+    enable = true;
+    port = 6379;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
