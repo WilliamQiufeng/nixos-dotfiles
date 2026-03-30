@@ -43,6 +43,7 @@
     prismlauncher
     wireshark
     clash-verge-rev
+    netease-cloud-music-gtk
 
     # Nix LSP
     nil
