@@ -3,6 +3,7 @@
   pkgs,
   nix4vscode,
   pkgs-2505,
+  pkgs-unstable,
   ...
 }:
 {
@@ -77,6 +78,9 @@
     (jetbrains.goland.override {
       vmopts = "-Dawt.toolkit.name=WLToolkit";
     })
+
+    # Godot
+    pkgs-unstable.godot-mono
   ];
 
   # ----- GIT -----
