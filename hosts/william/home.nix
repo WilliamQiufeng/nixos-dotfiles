@@ -104,6 +104,7 @@
       "pinage404.nix-extension-pack"
       "ms-python.python"
       "ms-python.debugpy"
+      "rust-lang.rust-analyzer"
     ];
   };
 
