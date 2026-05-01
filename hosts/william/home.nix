@@ -107,6 +107,7 @@
       "rust-lang.rust-analyzer"
       "njpwerner.autodocstring"
       "ms-python.black-formatter"
+      "ms-python.vscode-pylance"
     ];
   };
 
