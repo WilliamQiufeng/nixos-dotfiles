@@ -105,6 +105,8 @@
       "ms-python.python"
       "ms-python.debugpy"
       "rust-lang.rust-analyzer"
+      "njpwerner.autodocstring"
+      "ms-python.black-formatter"
     ];
   };
 
