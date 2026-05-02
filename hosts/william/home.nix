@@ -28,6 +28,17 @@
     enable_proxy = "export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897";
   };
 
+  # NPM
+  home.file.".npmrc".text = ''
+    prefix = ''${HOME}/.npm-packages
+  '';
+  home.sessionPath = [
+    "$HOME/.npm-packages/bin"
+  ];
+  home.sessionVariables = {
+    NODE_PATH = "$HOME/.npm-packages/lib/node_modules";
+  };
+
   home.packages = with pkgs; [
     # Git Credential Manager
     git-credential-manager
@@ -59,6 +70,8 @@
     findutils
     brightnessctl
     javaPackages.compiler.openjdk21
+    nodejs_24
+    bubblewrap
 
     # .NET Development
     (jetbrains.rider.override {
