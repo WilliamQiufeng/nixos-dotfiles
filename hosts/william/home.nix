@@ -16,6 +16,7 @@
     ../../packages/steam/home.nix
     ../../desktop/niri
     ../../packages/lunar-client/home.nix
+    ../../packages/rider/home.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -72,12 +73,6 @@
     javaPackages.compiler.openjdk21
     nodejs_24
     bubblewrap
-
-    # .NET Development
-    (jetbrains.rider.override {
-      vmopts = "-Dawt.toolkit.name=WLToolkit";
-    })
-    dotnet-sdk_10
 
     # Scala
     sbt-with-scala-native
