@@ -30,6 +30,9 @@
       libdecor
       wayland
     ];
+
+    libraryPath = pkgs.lib.makeLibraryPath libs;
+    openglDriverPath = "/run/opengl-driver/lib:/run/opengl-driver-32/lib";
   in
   {
     devShells.x86_64-linux.default = pkgs.mkShell {
@@ -37,9 +40,10 @@
 
       # This tells nix-ld where to find the libraries ONLY for this project
       shellHook = ''
-        export NIX_LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath libs}:$NIX_LD_LIBRARY_PATH
+        export NIX_LD_LIBRARY_PATH=${libraryPath}:${openglDriverPath}:$NIX_LD_LIBRARY_PATH
         export DOTNET_ROLL_FORWARD="LatestMajor"
         export NIX_LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH:$PWD/Quaver.Shared
+        export LD_LIBRARY_PATH=${libraryPath}:${openglDriverPath}:$LD_LIBRARY_PATH:$PWD/Quaver.Shared
       '';
     };
   };

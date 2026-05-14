@@ -10,8 +10,26 @@ let
   ];
 
   extra-lib = with pkgs; [
-    # Add any extra libraries you want accessible to Rider here
+    stdenv.cc.cc.lib
+    zlib
+    icu
+    openssl
+    xorg.libX11
+    xorg.libXi
+    xorg.libXext
+    xorg.libXrandr
+    xorg.libXcursor
+    glib
+    SDL2
+    libGL
+    libglvnd
+    alsa-lib
+    libpulseaudio
+    libdecor
+    wayland
   ];
+
+  opengl-driver-lib = "/run/opengl-driver/lib:/run/opengl-driver-32/lib";
 
   rider = pkgs.jetbrains.rider.overrideAttrs (attrs: {
     postInstall = ''
@@ -20,7 +38,8 @@ let
       makeWrapper $out/bin/.rider-toolless $out/bin/rider \
         --argv0 rider \
         --prefix PATH : "${lib.makeBinPath extra-path}" \
-        --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath extra-lib}"
+        --prefix NIX_LD_LIBRARY_PATH : "${lib.makeLibraryPath extra-lib}:${opengl-driver-lib}" \
+        --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath extra-lib}:${opengl-driver-lib}"
 
       # Making Unity Rider plugin work!
       # The plugin expects the binary to be at /rider/bin/rider,
