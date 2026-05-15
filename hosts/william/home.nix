@@ -10,7 +10,6 @@
   imports = [
     ../../config/obs/config.nix
     ../../config/nvidia/home.nix
-    ../../packages/ime.nix
     ../../packages/shell/zsh.nix
     ../../packages/gnome/home.nix
     ../../packages/steam/home.nix

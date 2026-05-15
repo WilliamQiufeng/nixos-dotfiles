@@ -12,6 +12,8 @@
     ./graphics.nix
     ./hardware-configuration.nix
     ./bluetooth.nix
+    ../../packages/keyd.nix
+    ../../packages/ime.nix
   ];
 
   # Bootloader.
