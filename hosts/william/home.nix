@@ -64,7 +64,7 @@
     gnumake
     unzip
     btop
-    neofetch
+    fastfetch
     lshw
     nix-search-cli
     findutils
