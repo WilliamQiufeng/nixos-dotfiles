@@ -198,6 +198,23 @@
     "nix-command"
     "flakes"
   ];
+
+  # Automatic updates: https://wiki.nixos.org/wiki/Automatic_system_upgrades#Channel-based_systems_(default)
+  # We want to stay current
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+    dates = "04:05";
+  };
+  # We want to keep the nix store neat and tidy https://wiki.nixos.org/wiki/Storage_optimization
+  nix.optimise.automatic = true;
+  # And perform regular GC operations to keep things cleaned up
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
