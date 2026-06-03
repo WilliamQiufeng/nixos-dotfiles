@@ -26,7 +26,7 @@ nixpkgs.lib.nixosSystem {
       ];
     }
     (
-      { pkgs, ... }:
+      { pkgs, lib, ... }:
       {
         nixpkgs.overlays = [
           (final: prev: {
@@ -37,6 +37,24 @@ nixpkgs.lib.nixosSystem {
                   --set XDG_CURRENT_DESKTOP GNOME
               '';
             });
+          })
+          (final: prev: {
+            microsoft-edge = prev.microsoft-edge.overrideAttrs (old: (
+              let
+                deps = [
+                  (final.libxml2.overrideAttrs rec {
+                    version = "2.13.8";
+                    src = final.fetchurl {
+                      url = "mirror://gnome/sources/libxml2/${lib.versions.majorMinor version}/libxml2-${version}.tar.xz";
+                      hash = "sha256-J3KUyzMRmrcbK8gfL0Rem8lDW4k60VuyzSsOhZoO6Eo=";
+                    };
+                  })
+                ];
+              in {
+                rpath = old.rpath + ":" + lib.makeLibraryPath deps + ":" + lib.makeSearchPathOutput "lib" "lib64" deps;
+                binpath = old.binpath + ":" + lib.makeBinPath deps;
+              }
+            ));
           })
         ];
       }
