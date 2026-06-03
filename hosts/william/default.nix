@@ -15,6 +15,14 @@ nixpkgs.lib.nixosSystem {
     {
       nixpkgs.overlays = [
         nix4vscode.overlays.default
+        (final: prev: {
+          qq = prev.qq.overrideAttrs (old: {
+            src = prev.fetchurl {
+              url = "https://github.com/libzonda/Linux-QQ-release/releases/download/3.2.27/QQ_3.2.27_260401_amd64_01.deb";
+              hash = "sha256-iI5gc0VSZAzab2B+w1I/6idSD/zx45Ou+uyqSJzCC+c=";
+            };
+          });
+        })
       ];
     }
     (
@@ -33,6 +41,7 @@ nixpkgs.lib.nixosSystem {
         ];
       }
     )
+    
     home-manager.nixosModules.home-manager
     {
       home-manager = {
