@@ -101,6 +101,7 @@
       };
       credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
     };
+    lfs.enable = true;
   };
   programs.pay-respects = {
     enable = true;
