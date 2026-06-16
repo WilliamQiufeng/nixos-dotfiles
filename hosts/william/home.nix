@@ -56,6 +56,7 @@
     wireshark
     clash-verge-rev
     netease-cloud-music-gtk
+    osu-lazer-bin
 
     # Nix LSP
     nil
