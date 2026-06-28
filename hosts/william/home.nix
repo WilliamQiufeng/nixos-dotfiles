@@ -73,6 +73,8 @@
     javaPackages.compiler.openjdk21
     nodejs_24
     bubblewrap
+    nixd
+    cloudflare-warp
 
     # Scala
     sbt-with-scala-native
