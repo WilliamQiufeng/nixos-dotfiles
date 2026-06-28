@@ -75,6 +75,7 @@
     bubblewrap
     nixd
     cloudflare-warp
+    cloudflared
 
     # Scala
     sbt-with-scala-native
