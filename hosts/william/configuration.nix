@@ -144,6 +144,7 @@
     };
     wantedBy = [ "graphical-session.target" ];
   };
+  systemd.oomd.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;

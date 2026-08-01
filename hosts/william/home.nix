@@ -76,6 +76,9 @@
     nixd
     cloudflare-warp
     cloudflared
+    yt-dlp
+    ffmpeg
+    ripgrep
 
     # Scala
     sbt-with-scala-native
@@ -92,6 +95,8 @@
 
     # Godot
     pkgs-unstable.godot-mono
+
+    libreoffice
   ];
 
   # ----- GIT -----
