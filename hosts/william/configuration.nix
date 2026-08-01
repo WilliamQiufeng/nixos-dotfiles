@@ -144,7 +144,16 @@
     };
     wantedBy = [ "graphical-session.target" ];
   };
-  systemd.oomd.enable = true;
+  systemd.oomd = {
+    enable = true;
+    enableUserSlices = true;
+    settings.OOM = {
+      DefaultMemoryPressureLimit = "70%";
+      DefaultMemoryPressureDurationSec = "20s";
+      SwapUsedLimit = "80%";
+    };
+  };
+  systemd.slices.user.sliceConfig.ManagedOOMMemoryPressureLimit = "70%";
 
   # Install firefox.
   programs.firefox.enable = true;
