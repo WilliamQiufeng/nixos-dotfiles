@@ -47,7 +47,6 @@
       shellHook = ''
         export NIX_LD_LIBRARY_PATH=${libraryPath}:${openglDriverPath}:$NIX_LD_LIBRARY_PATH
         export DOTNET_ROLL_FORWARD="LatestMajor"
-        export SDL_DYNAMIC_API=${pkgs.SDL2}/lib/libSDL2-2.0.so.0
         export SDL_VIDEO_X11_WMCLASS=Quaver
         export NIX_LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH:$PWD/Quaver.Shared
         export LD_LIBRARY_PATH=${libraryPath}:${openglDriverPath}:$LD_LIBRARY_PATH:$PWD/Quaver.Shared
