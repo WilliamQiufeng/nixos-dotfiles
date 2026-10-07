@@ -1,7 +1,13 @@
 { pkgs, lib, ... }:
 
 let
+  dotnetSdk = pkgs.dotnetCorePackages.combinePackages [
+    pkgs.dotnet-sdk_10
+    pkgs.dotnetCorePackages.sdk_8_0
+  ];
+
   extra-path = with pkgs; [
+    dotnetSdk
     dotnetCorePackages.sdk_6_0
     dotnetPackages.Nuget
     mono
@@ -38,6 +44,10 @@ let
       makeWrapper $out/bin/.rider-toolless $out/bin/rider \
         --argv0 rider \
         --prefix PATH : "${lib.makeBinPath extra-path}" \
+        --set DOTNET_ROOT "${dotnetSdk}/share/dotnet" \
+        --set DOTNET_ROOT_X64 "${dotnetSdk}/share/dotnet" \
+        --set DOTNET_HOST_PATH "${dotnetSdk}/share/dotnet/dotnet" \
+        --set DOTNET_MULTILEVEL_LOOKUP "0" \
         --prefix NIX_LD_LIBRARY_PATH : "${lib.makeLibraryPath extra-lib}:${opengl-driver-lib}" \
         --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath extra-lib}:${opengl-driver-lib}"
 
@@ -58,7 +68,7 @@ in
 
     # .NET Development
 
-    dotnet-sdk_10
+    dotnetSdk
     (rider.override {
       vmopts = "-Dawt.toolkit.name=WLToolkit";
     })

@@ -46,6 +46,7 @@
     # Apps
     microsoft-edge # From 25.05 because Sync on work accounts break on 25.11
     discord
+    vesktop
     spotify
     vscode
     qq
@@ -79,6 +80,7 @@
     yt-dlp
     ffmpeg
     ripgrep
+    lldb
 
     # Scala
     sbt-with-scala-native
@@ -122,10 +124,15 @@
       "ms-python.python"
       "ms-python.debugpy"
       "rust-lang.rust-analyzer"
+      "vadimcn.vscode-lldb"
+      "jnoortheen.nix-ide"
       "njpwerner.autodocstring"
       "ms-python.black-formatter"
       "ms-python.vscode-pylance"
       "openai.chatgpt"
+      "ms-vscode.cpptools"
+      "ms-vscode.cpp-devtools"
+      "ms-vscode.cmake-tools"
     ];
   };
 

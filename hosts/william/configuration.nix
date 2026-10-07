@@ -73,6 +73,10 @@
   };
 
   programs.niri.enable = true;
+  xdg.portal.config.niri = {
+    "org.freedesktop.impl.portal.ScreenCast" = "gnome";
+    "org.freedesktop.impl.portal.Screenshot" = "gnome";
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
