@@ -99,6 +99,8 @@
     pkgs-unstable.godot-mono
 
     libreoffice
+    pkgs-unstable.xournalpp
+    
   ];
 
   # ----- GIT -----
@@ -133,6 +135,7 @@
       "ms-vscode.cpptools"
       "ms-vscode.cpp-devtools"
       "ms-vscode.cmake-tools"
+      "ms-toolsai.jupyter"
     ];
   };
 
